@@ -1,0 +1,267 @@
+@charset "UTF-8";
+/* ======================================================================= */
+/*!
+ * CUSTOM STYLESHEET
+ * 01. Bootstrap v4.6 Resetting
+ *   -- Navbar
+ * 02. WordPress Style
+ */
+/* ======================================================================= */
+
+/*!
+ * 01. Bootstrap v4.6 Resetting
+ * ----------------------------------------------------------------------- */
+
+/* Badges */
+/* ----------------------------------------------------------------------- */
+.badge-required {
+  float: right;
+  margin-top: .1rem;
+  color: #0b4ea1;
+  background-color: #b2dee6;
+}
+
+/* Buttons */
+/* ----------------------------------------------------------------------- */
+.btn {
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+  font-size: 1rem;
+  border: none;
+}
+
+/* Borders */
+/* ----------------------------------------------------------------------- */
+.border, .border-top, .border-right, .border-bottom, .border-left {
+  border-color: #969696;
+}
+
+/* Navbar */
+/* ----------------------------------------------------------------------- */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  margin: 0;
+}
+
+/* navbar-toggler */
+.mobile-nav-button {
+  z-index: 30;
+}
+.navbar-light .navbar-toggler {
+  position: relative;
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  color: #0b4ea1;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #0b4ea1;
+}
+.navbar-light .navbar-toggler-icon {
+  position: absolute;
+  display: block;
+  left: 5px;
+  width: 20px;
+  height: 2px;
+  background-image: none!important;
+  background-color: #FFF;
+  transition: ease .5s;
+}
+.navbar-toggler-icon:nth-of-type(1) {top:8px;}
+.navbar-toggler-icon:nth-of-type(2) {top:14px;}
+.navbar-toggler-icon:nth-of-type(3) {top:20px;}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-of-type(1) {
+  top:15px;
+  transform: rotate(45deg);
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-of-type(2) {
+  opacity: 0;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-of-type(3) {
+  top:15px;
+  transform: rotate(-45deg);
+}
+
+/* Typography */
+/* ----------------------------------------------------------------------- */
+.small, small {
+  font-size: 90%;
+}
+.s-small {
+  font-size: 80%;
+}
+.large {
+  font-size: 110%;
+}
+.x-large {
+  font-size: 120%;
+}
+
+/* Form */
+/* ----------------------------------------------------------------------- */
+.form-group {
+  margin-bottom: 0;
+  padding: 1rem 0;
+}
+.form-group .col-form-label {
+  font-weight: bold;
+}
+.form-group .col-form-label .required {
+  float: right;
+}
+.form-group input[type="submit"] {
+  outline: none;
+  border: none;
+}
+
+/* Cards */
+/* ----------------------------------------------------------------------- */
+.card-img-top {
+  height: auto;
+}
+
+/* Table */
+/* ----------------------------------------------------------------------- */
+.table td, .table th {
+  padding: 1.5rem;
+}
+.table tr:first-of-type td, .table tr:first-of-type th {
+  border-top: none;
+}
+.table tr:last-of-type td, .table tr:last-of-type th {
+  border-bottom: 1px solid #dee2e6;
+}
+@media (max-width: 991.98px) {
+  .table.responsive-block td, .table.responsive-block th {
+    display: block;
+  }
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.03);
+}
+
+/*!
+ * 02. WordPress Style
+ * ----------------------------------------------------------------------- */
+
+.post-thumbnail {
+	margin-left: auto;
+	margin-right: auto;
+  text-align: center;
+}
+.post-thumbnail .wp-post-image {
+	display: block;
+	width: auto;
+  height: auto;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media (min-width: 1200px) {
+  .post-thumbnail {
+    max-width: 80%;
+  }
+}
+
+/* Block editor */
+/* ----------------------------------------------------------------------- */
+.wp-block-table table {
+  margin: 0 auto 1.5rem;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1px;
+  background-color: #05a4d6;
+}
+.wp-block-table table tr th {
+  padding: 1rem;
+  font-weight: normal;
+  color: #05a4d6;
+  text-align: center;
+  background-color: #e9f3fb;
+  white-space: nowrap;
+}
+.wp-block-table table tr td {
+  padding: 1rem;
+  color: #05a4d6;
+  background-color: #FFF;
+}
+.wp-block-table table tr td p {
+  color: #05a4d6;
+}
+.wp-block-table table tr td p:last-of-type {
+  margin-bottom: 0;
+}
+.wp-block-table td, .wp-block-table th {
+  border: none;
+}
+@media (max-width: 991.98px) {
+  .wp-block-table table tr th, .wp-block-table table tr td {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Breadcrumb NavXT */
+/* ----------------------------------------------------------------------- */
+.breadcrumbs {
+  margin-bottom: .75rem;
+  padding: .75rem;
+  text-align: left;
+  font-size: .75rem;
+  font-weight: 400;
+}
+.breadcrumbs a {
+  font-size: .75rem;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.main-web-layout .breadcrumbs,
+.main-web-layout .breadcrumbs a {
+  color: #595757 !important;
+}
+
+.footer-web-layout .breadcrumbs {
+  color: #FFF;
+  background-color: #003168;
+}
+.footer-web-layout .breadcrumbs a {
+  color: #FFF !important;
+}
+.footer-web-layout .breadcrumbs a:hover {
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+.footer-web-layout .breadcrumbs i {
+  color: #FFF;
+}
+
+/* PageNavi */
+/* ----------------------------------------------------------------------- */
+.wp-pagenavi {
+  clear: both;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.wp-pagenavi a {
+  color: #FFF !important;
+  text-decoration: none !important;
+}
+.wp-pagenavi a, .wp-pagenavi span {
+  display: inline-block;
+  margin: 2px 5px;
+  padding: 8px 16px;
+  text-decoration: none;
+  background: none #05a4d6;
+  color: #FFF;
+  border-radius: 4px;
+}
+.wp-pagenavi .current,
+.wp-pagenavi a:hover {
+  color: #05a4d6 !important;
+  background: none #f6f6f6;
+}
