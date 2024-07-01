@@ -35,7 +35,7 @@
               <div class="form-group row pb-0">
                 <label for="syohin-cd_{{$sy->syouhin_cd}}" class="col-7 col-lg-7 col-form-label pr-lg-0">{{$sy->web_syouhin_nm}}@if($sy->syouhin_color)<span class="ml-2 syouhin_color_{{ $sy->syouhin_color }}">　　</span>@endif @if($sy->sold_count == 0) <span class="text-red font-weight-bold">SOLDOUT</span>@endif</label>
                 <div class="col-3 col-lg-3">
-                  <input type="number" class="form-control amount_field no-spin" id="syohin-cd_{{$loop->iteration}}" name="syohin_amount[]" value="" placeholder="0" readonly @if($sy->sold_count == 0) readonly @endif>
+                  <input type="number" class="form-control amount_field no-spin" id="syohin-cd_{{$loop->iteration}}" name="syohin_amount[]" value="" placeholder="0" @if($sy->sold_count == 0) readonly @endif>
                   <input type="hidden" name="syouhin_cd[]" value="{{$sy->syouhin_cd}}">
                 </div>
                 <div class="col-2 col-lg-2 pl-lg-0 text-left col-form-label">

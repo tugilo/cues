@@ -28,16 +28,16 @@
             <!--/a-->
         </div>
         <div class="col mb-4">
-            <a href="/syouhin/list?syouhin_syubetu=3">
+            <!--a href="/syouhin/list?syouhin_syubetu=3"-->
                 <div class="card text-center h-100">
                     <div class="border m-3">
-                        <img src="/assets/images/home-GOLFTEE.jpg" class="card-img-top" alt="ティー">
+                        <img src="/assets/images/home-tee_end.jpg" class="card-img-top" alt="ティー">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title h6 text-muted">ゴルフティ</h3>
                     </div>
                 </div>
-            </a>
+            <!--/a-->
         </div>
         <!--div class="col mb-4">
           <div class="card text-center h-100">

@@ -30,7 +30,7 @@ class HomeController extends Controller
         {
             $open_flg = 1;
         }else{
-            $open_flg = 1;
+            $open_flg = 0;
         }
         if($open_flg == 1)
         {

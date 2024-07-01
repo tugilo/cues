@@ -39,7 +39,11 @@
 
 【ご注文内容】
 @foreach($carts as $cart)
-{{$cart['cart_no']}}    {{$cart['category_name']}}  {{$cart['syouhin_name']}}   {{$cart['syohin_amount']}}  {{$cart['tani_name']}}
+    @if($cart['category_name'] == $cart['syouhin_name'])
+        {{$cart['cart_no']}}    {{$cart['syouhin_name']}}   {{$cart['syohin_amount']}}  {{$cart['tani_name']}}
+    @else
+        {{$cart['cart_no']}}    {{$cart['category_name']}}  {{$cart['syouhin_name']}}   {{$cart['syohin_amount']}}  {{$cart['tani_name']}}
+    @endif
 @endforeach
 
 合計{{$countall}}セット

@@ -45,8 +45,9 @@
               </div>
               @else
 
-              <a href="/syouhin/detail?category_cd={{$sl->syouhin_category_cd}}" class="card item-card text-center h-100 rounded-0">
-                  <div class="border">
+              <!--a href="/syouhin/detail?category_cd={{$sl->syouhin_category_cd}}" class="card item-card text-center h-100 rounded-0"-->
+              <a href="#" class="card item-card text-center h-100 rounded-0">
+                <div class="border">
                     <img src="/assets/images/{{$sl->web_syouhin_image1}}" class="card-img-top" alt="{{$sl->web_syouhin_category_nm}}">
                   </div>
                   <div class="card-body">
