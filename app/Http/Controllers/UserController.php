@@ -31,7 +31,7 @@ class UserController extends Controller
             INNER JOIN web_t_web_juchu_detail AS JD ON J.web_juchu_id = JD.web_juchu_id AND J.config_id = JD.config_id
             WHERE J.delete_flg = 0
             AND (JD.syouhin_cd = 1 OR JD.syouhin_cd = 2 OR JD.syouhin_cd = 4 OR JD.syouhin_cd = 5 OR JD.syouhin_cd = 92 OR JD.syouhin_cd = 93)
-            AND J.web_m_torihikisaki_id = '".$web_m_torihikisaki_id."' AND J.system_year = 2023
+            AND J.web_m_torihikisaki_id = '".$web_m_torihikisaki_id."' AND J.system_year = 2024
             GROUP BY J.system_year, J.web_m_torihikisaki_id
         ";
         $flgs = DB::select($sql2);

@@ -54,7 +54,7 @@
             </div>
             <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-        <a class="btn btn-primary" href="/pdf/2024C_aisatujyo.pdf" download="2024C_aisatujyo.pdf" id="pdf_dl">同意してダウンロード</a>
+        <a class="btn btn-primary" href="/doc/2025C_aisatujyo.docx" download="2025C_aisatujyo.docx" id="pdf_dl">同意してダウンロード</a>
 
             </div>
         </div>

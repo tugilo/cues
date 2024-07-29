@@ -41,23 +41,23 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/kabeC_01sold.jpg" class="card-img-top" alt="壁掛けカレンダー（A4 特寸サイズ）">
+                    <img src="/images/kabeC_01.jpg" class="card-img-top" alt="壁掛けカレンダー（A4 特寸サイズ）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
                   <h3 class="item-title h6">壁掛けカレンダー（A4サイズ【特寸】）</h3>
-                  <p class="item-price">210<span class="currency">円</span><span class="tax-in">（税込231円）</span></p>
+                  <p class="item-price">190<span class="currency">円</span><span class="tax-in">（税込209円）</span></p>
 
                   <form method="post" action="/calendar/cart/add">
 
                       {{ csrf_field() }}
                       <span class="text-blue">※20部以上からのご注文となります</span><br>
                     <div class="form-group row pb-0">
-                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_92" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin-cd_92" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="92">
                           <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（A4サイズ【特寸】）支社納品">
                       </div>
@@ -66,9 +66,9 @@
                       </div>
                     </div>
                     <div class="form-group row pb-0">
-                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_93" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin-cd_93" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="93">
                           <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（A4サイズ【特寸】）発送代行">
                       </div>
@@ -119,7 +119,7 @@
 
           <div class="row mb-5">
             <div class="col-lg-10 offset-lg-1 pt-4 pb-3">
-              <h2 class="h1">この卓上カレンダーの発送代行をご依頼の場合、<br><span class="text-red">「差出人ラベル」</span>が必要です</h2>
+              <h2 class="h1">この壁掛けカレンダーの発送代行をご依頼の場合、<br><span class="text-red">「差出人ラベル」</span>が必要です</h2>
               <p>※但し、<span style="color:#0030ff">無料特典の挨拶状にLP様情報を入れて</span>いただければ差出人ラベルの<span  style="color:#0030ff">代用が可能</span>です。</p>
               <div class="row border-top border-bottom mt-4">
                 <div class="col-lg-10 offset-lg-1 py-4">
@@ -144,7 +144,7 @@
               <h3 class="h2 border-bottom border-color-dark pb-2">壁掛けカレンダーご購入<span class="text-red">【無料特典】</span></h3>
               <div class="row align-items-center">
                 <div class="col-12 col-lg-7 my-2">
-                    <p class="small">ご好評いただいている、挨拶状PDF無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状PDF（横Ver.）を無料ダウンロードしていただけます。</p>
+                    <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
                     <p class="small">紙面右下のスペースにネームスタンパーを押し、私製挨拶状として、ぜひご活用ください。</p>
                   <div class="text-center my-2">
                       <a href="/mypage"><img src="/images/go_mypage.png" alt="マイページへ"></a>
@@ -165,7 +165,7 @@
       <!-- s:content-box -->
       <section class="content-box">
 
-        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2024 年カレンダーイメージ＞</h2>
+        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダーイメージ＞</h2>
 
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
@@ -175,10 +175,10 @@
 
         <div class="row align-items-center">
           <div class="col-12 col-lg-7 my-3">
-            <img class="img-fluid" src="/images/kabeC_img01.jpg" alt="2024 年カレンダーイメージ">
+            <img class="img-fluid" src="/images/kabeC_img01.jpg" alt="2025 年カレンダーイメージ">
           </div>
           <div class="col-12 col-lg-5 my-3">
-            <img class="img-fluid" src="/images/kabeC_img02.jpg" alt="2024 年カレンダーイメージ">
+            <img class="img-fluid" src="/images/kabeC_img02.jpg" alt="2025 年カレンダーイメージ">
           </div>
         </div>
 

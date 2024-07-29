@@ -41,14 +41,14 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/takuA_01_SOLD.jpg" class="card-img-top" alt="卓上カレンダー（LP 様情報有り）">
+                    <img src="/images/takuA_01.jpg" class="card-img-top" alt="卓上カレンダー（LP 様情報有り）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
                   <h3 class="item-title h6">卓上カレンダー（B6サイズ）（LP様情報あり）</h3>
-                  <p class="item-price">290<span class="currency">円</span><span class="tax-in">（税込319円）</span><span class="text-red font-weight-bold">SOLDOUT</span></p>
+                  <p class="item-price">270<span class="currency">円</span><span class="tax-in">（税込297円）</span><!--span class="text-red font-weight-bold">SOLDOUT</span--></p>
 
                   <form method="post" action="/calendar/cart/add">
 
@@ -57,7 +57,7 @@
                       <div class="form-group row pb-0">
                       <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品</label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_7" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin-cd_7" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="7">
                           <input type="hidden" name="syouhin_name[]" value="卓上カレンダー（B6サイズ）（LP様情報あり）支社納品">
                       </div>
@@ -68,7 +68,7 @@
                     <div class="form-group row pb-0">
                       <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行</label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_8" name="syohin_amount[]" value="" placeholder="0" readonly >
+                          <input type="number" class="form-control amount_field" id="syohin-cd_8" name="syohin_amount[]" value="" placeholder="0"  >
                           <input type="hidden" name="syouhin_cd[]" value="8">
                           <input type="hidden" name="syouhin_name[]" value="卓上カレンダー（B6サイズ）（LP様情報あり）発送代行">
                       </div>
@@ -121,7 +121,7 @@
       <!-- s:content-box -->
       <section class="content-box">
 
-        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2024 年カレンダーイメージ＞</h2>
+        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダーイメージ＞</h2>
 
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
@@ -132,10 +132,10 @@
 
         <div class="row align-items-center">
           <div class="col-12 col-lg-5 my-3">
-            <img class="img-fluid" src="/images/takuA_img01.jpg" alt="2024 年カレンダーイメージ">
+            <img class="img-fluid" src="/images/takuA_img01.jpg" alt="2025 年カレンダーイメージ">
           </div>
           <div class="col-12 col-lg-7 my-3">
-            <img class="img-fluid" src="/images/takuA_img02.jpg" alt="2024 年カレンダーイメージ">
+            <img class="img-fluid" src="/images/takuA_img02.jpg" alt="2025 年カレンダーイメージ">
           </div>
         </div>
 

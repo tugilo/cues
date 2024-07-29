@@ -34,59 +34,59 @@
         <div class="row row-cols-1 row-cols-lg-2">
 
           <div class="col mb-4">
-            <!--a href="/calendar/syouhin/detail?syouhin_cd=1" class="card h-100 item-card"-->
-              <img src="/images/kabeA_01_SOLD.jpg" class="img-fluid border" alt="壁掛けカレンダー（挨拶状/アンケート付）">
+            <a href="/calendar/syouhin/detail?syouhin_cd=1" class="card h-100 item-card">
+              <img src="/images/kabeA_01.jpg" class="img-fluid border" alt="壁掛けカレンダー（挨拶状/アンケート付）">
               <div class="card-body">
-                <h3 class="card-title h6">壁掛けカレンダー（挨拶状/アンケート付）<span class="text-red font-weight-bold">SOLDOUT</span></h3>
-                <p class="card-text">310円（税込341円）</p>
+                <h3 class="card-title h6">壁掛けカレンダー（挨拶状/アンケート付）<!--span class="text-red font-weight-bold">SOLDOUT</span--></h3>
+                <p class="card-text">300円（税込330円）</p>
               </div>
-            <!--/a-->
+            </a>
           </div>
           <div class="col mb-4">
-            <!--a href="/calendar/syouhin/detail?syouhin_cd=4" class="card h-100 item-card"-->
+            <a href="/calendar/syouhin/detail?syouhin_cd=4" class="card h-100 item-card">
               <img src="/images/kabeB_01.jpg" class="img-fluid border" alt="壁掛けカレンダー">
               <div class="card-body">
-                <h3 class="card-title h6">壁掛けカレンダー<span class="text-red font-weight-bold">SOLDOUT</span></h3>
-                <p class="card-text">275円（税込303円）</p>
+                <h3 class="card-title h6">壁掛けカレンダー</h3>
+                <p class="card-text">270円（税込297円）</p>
               </div>
-            <!--/a-->
+            </a>
           </div>
           <div class="col mb-4">
-            <!--a href="/calendar/syouhin/detail?syouhin_cd=92" class="card h-100 item-card"-->
-              <img src="/images/kabeC_01sold.jpg" class="img-fluid border" alt="壁掛けカレンダー（A4サイズ【特寸】）">
+            <a href="/calendar/syouhin/detail?syouhin_cd=92" class="card h-100 item-card">
+              <img src="/images/kabeC_01.jpg" class="img-fluid border" alt="壁掛けカレンダー（A4サイズ【特寸】）">
               <div class="card-body">
-                <h3 class="card-title h6">壁掛けカレンダー（A4サイズ【特寸】）<span class="text-red font-weight-bold">SOLDOUT</span></h3>
-                <p class="card-text">210円（税込231円）</p>
+                <h3 class="card-title h6">壁掛けカレンダー（A4サイズ【特寸】）<!--span class="text-red font-weight-bold">SOLDOUT</span--></h3>
+                <p class="card-text">190円（税込209円）</p>
               </div>
-            <!--/a-->
+            </a>
           </div>
 
           <div class="col mb-4">
-            <!-- a href="/calendar/syouhin/detail?syouhin_cd=7" class="card h-100 item-card"-->
-              <img src="/images/takuA_01_SOLD.jpg" class="img-fluid border" alt="卓上カレンダー（B6サイズ）（LP様情報あり）">
+            <a href="/calendar/syouhin/detail?syouhin_cd=7" class="card h-100 item-card">
+              <img src="/images/takuA_01.jpg" class="img-fluid border" alt="卓上カレンダー（B6サイズ）（LP様情報あり）">
               <div class="card-body">
-                <h3 class="card-title h6">卓上カレンダー（B6サイズ）（LP様情報あり）<span class="text-red font-weight-bold">SOLDOUT</span></h3>
-                <p class="card-text">290円（税込319円）</p>
+                <h3 class="card-title h6">卓上カレンダー（B6サイズ）（LP様情報あり）<!--span class="text-red font-weight-bold">SOLDOUT</span--></h3>
+                <p class="card-text">270円（税込297円）</p>
               </div>
-            <!--/a-->
+            </a>
           </div>
           <div class="col mb-4">
-            <!--a href="/calendar/syouhin/detail?syouhin_cd=10" class="card h-100 item-card"-->
+            <a href="/calendar/syouhin/detail?syouhin_cd=10" class="card h-100 item-card">
               <img src="/images/takuB_01.jpg" class="img-fluid border" alt="卓上カレンダー（B6サイズ）">
               <div class="card-body">
-                <h3 class="card-title h6">卓上カレンダー（B6サイズ）<span class="text-red font-weight-bold">SOLDOUT</span></h3>
-                <p class="card-text">255円（税込281円）</p>
+                <h3 class="card-title h6">卓上カレンダー（B6サイズ）</h3>
+                <p class="card-text">240円（税込264円）</p>
               </div>
-            <!--/a-->
+            </a>
           </div>
           <div class="col mb-4">
-            <!--a href="/calendar/syouhin/detail?syouhin_cd=85" class="card h-100 item-card"-->
-              <img src="/images/takuC_01_tell.jpg" class="img-fluid border" alt="卓上カレンダー（ハガキサイズ）">
+            <a href="/calendar/syouhin/detail?syouhin_cd=85" class="card h-100 item-card">
+              <img src="/images/takuC_01.jpg" class="img-fluid border" alt="卓上カレンダー（ハガキサイズ）">
               <div class="card-body">
-                <h3 class="card-title h6">卓上カレンダー（ハガキサイズ）<span class="text-red font-weight-bold">SOLDOUT</span></h3>
-                <p class="card-text">155円（税込171円）</p>
+                <h3 class="card-title h6">卓上カレンダー（ハガキサイズ）<!--span class="text-red font-weight-bold">SOLDOUT</span--></h3>
+                <p class="card-text">140円（税込154円）</p>
               </div>
-            <!--/a-->
+            </a>
           </div>
 
         </div>

@@ -49,16 +49,16 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
                   <h3 class="item-title h6">壁掛けカレンダー</h3>
-                  <p class="item-price">275<span class="currency">円</span><span class="tax-in">（税込303円）</span></p>
+                  <p class="item-price">270<span class="currency">円</span><span class="tax-in">（税込297円）</span></p>
 
                   <form method="post" action="/calendar/cart/add">
 
                       {{ csrf_field() }}
                       <span class="text-blue">※20部以上からのご注文となります</span><br>
                     <div class="form-group row pb-0">
-                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_4" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin-cd_4" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="4">
                           <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー支社納品">
                       </div>
@@ -67,9 +67,9 @@
                       </div>
                     </div>
                     <div class="form-group row pb-0">
-                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_5" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin-cd_5" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="5">
                           <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー発送代行">
                       </div>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="col-lg-12">
-                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button" readonly>注文する</button>
+                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button">注文する</button>
                       </div>
                     </div>
                   </form>
@@ -159,7 +159,7 @@
               <h3 class="h2 border-bottom border-color-dark pb-2">壁掛けカレンダーご購入<span class="text-red">【無料特典】</span></h3>
               <div class="row align-items-center">
                 <div class="col-12 col-lg-7 my-2">
-                    <p class="small">ご好評いただいている、挨拶状PDF無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状PDF（横Ver.）を無料ダウンロードしていただけます。</p>
+                    <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
                     <p class="small">紙面右下のスペースにネームスタンパーを押し、私製挨拶状として、ぜひご活用ください。</p>
                   <div class="text-center my-2">
                       <a href="/mypage"><img src="/images/go_mypage.png" alt="マイページへ"></a>
@@ -180,7 +180,7 @@
       <!-- s:content-box -->
       <section class="content-box">
 
-        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2024 年カレンダー掲載予定画像＞</h2>
+        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダー掲載予定画像＞</h2>
 
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
@@ -191,10 +191,10 @@
 
         <div class="row align-items-center">
           <div class="col-12 col-lg-7 my-3">
-            <img class="img-fluid" src="/images/kabeA_img03.jpg" alt="2024 年カレンダー掲載予定画像">
+            <img class="img-fluid" src="/images/kabeA_img03.jpg" alt="2025 年カレンダー掲載予定画像">
           </div>
           <div class="col-12 col-lg-5 my-3">
-            <img class="img-fluid" src="/images/kabeA_img04.jpg" alt="2024 年カレンダー掲載予定画像">
+            <img class="img-fluid" src="/images/kabeA_img04.jpg" alt="2025 年カレンダー掲載予定画像">
           </div>
         </div>
 

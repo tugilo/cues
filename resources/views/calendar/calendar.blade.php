@@ -13,7 +13,7 @@
     <!-- s:content-box -->
     <section class="content-box">
       <div class="container">
-         <h2 class="bg-yellow text-center"><span class="lh2">ご注文 三次販売締切日 <br class="d-block d-lg-none"> 12月25日（月）23:59まで</span></h2>
+         <h2 class="bg-yellow text-center"><span class="lh2">ご注文 一次販売締切日 <br class="d-block d-lg-none"> 9月30日（月）23:59まで</span></h2>
       </div> <!-- .container -->
     </section>
     <!-- n:content-box -->
@@ -28,8 +28,8 @@
               <h3 class="h1 border-top border-bottom border-color-dark py-3 text-center">壁掛けカレンダーご購入<span class="text-red">【無料特典】</span></h3>
               <div class="row align-items-center">
                 <div class="col-12 col-lg-7 my-2">
-                  <p class="small">ご好評いただいている、挨拶状PDF無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状PDF（横Ver.）を無料ダウンロードしていただけます。</p>
-                  <p class="small">紙面右下のスペースにネームスタンパーを押し、私製挨拶状として、ぜひご活用ください。</p>
+                  <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
+                  <p class="small">紙面右下のスペースにお名前を入れていただき、私製挨拶状として、ぜひご活用ください。</p>
                   <div class="text-center my-2">
                       <a href="/mypage"><img src="/images/go_mypage.png" alt="マイページへ"></a>
                   </div>
@@ -154,7 +154,7 @@
           </div>
           <div class="row no-gutters">
             <div class="col-12 col-lg-6 my-3">
-              <p class="mb-0"><span class="bg-pink text-white px-3 py-2">NEW</span></p>
+              <!--p class="mb-0"><span class="bg-pink text-white px-3 py-2">NEW</span></p-->
               <a href="/calendar/interview/detail?vol=10_01" class="card interview-card">
                 <img class="img-fluid" src="/assets/interview/images/vol10_mainimg.jpg" alt="Special interview">
                 <h5 class="card-title small text-center my-2">Vol.10 池田 泰之様＜神戸第二支社＞</h5>
@@ -193,8 +193,12 @@
             <p class="mb-4"><img class="img-fluid" src="/images/schedule/schedule_img06.jpg" alt="販売スケジュール"></p>
             <p class="mb-4"><img class="img-fluid" src="/images/schedule/schedule_img07.jpg" alt="販売スケジュール"></p>
             <div class="bg-light px-2 py-3">
-              <p class="text-center h2 m-0">支社納品のみをご注文の方へは<br>11月1日（水）から順次発送いたします</p>
+              <p class="text-center h2 m-0">支社納品のみをご注文の方へは<br>10月28日（月）から順次発送いたします</p>
             </div>
+            <p>◆注意事項◆</p>
+            <p><span class="text-red">※1</span>：一次販売で購入された方の二次/三次販売期間での「追加」購入は、販売価格の変更や最小注文部数はなく、一次販売時の条件でご購入いただけます。（卓上カレンダー（ハガキサイズ）のみ一次販売より最小注文部数の設定があります）</p>
+            <p><span class="text-red">※2</span>：二次/三次販売では販売価格を変更しております(1部あたり＠20円(税込22円)増)。</p>
+            <p><span class="text-red">※3</span>：※3：卓上カレンダー(LP様情報有)に関しては製造に時間を要す為、一次販売で受注を終了しております。</p>
           </div>
         </div>
 

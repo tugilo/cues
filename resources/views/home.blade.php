@@ -16,16 +16,16 @@
 
       <div class="row justify-content-center row-cols-1 row-cols-lg-3 my-lg-5 py-lg-5">
         <div class="col mb-4">
-            <!--a href="/calendar"-->
+            <a href="/calendar">
                 <div class="card text-center h-100">
                   <div class="border m-3">
-                    <img src="/assets/images/home-calendar_close.jpg" class="card-img-top" alt="カレンダー">
+                    <img src="/assets/images/home-calendar.jpg" class="card-img-top" alt="カレンダー">
                   </div>
                   <div class="card-body">
                     <h3 class="card-title h6 text-muted">カレンダー</h3>
                   </div>
                 </div>
-            <!--/a-->
+            </a>
         </div>
         <div class="col mb-4">
             <!--a href="/syouhin/list?syouhin_syubetu=3"-->

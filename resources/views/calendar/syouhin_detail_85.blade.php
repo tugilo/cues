@@ -42,27 +42,23 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/takuC_01_tell.jpg" class="card-img-top" alt="卓上カレンダー（ハガキサイズ）">
+                    <img src="/images/takuC_01.jpg" class="card-img-top" alt="卓上カレンダー（ハガキサイズ）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
                   <h3 class="item-title h6">卓上カレンダー（ハガキサイズ）</h3>
-                  <p class="item-price">155<span class="currency">円</span><span class="tax-in">（税込171円）</span><span class="text-red font-weight-bold h2">お問合せください</span></p>
+                  <p class="item-price">140<span class="currency">円</span><span class="tax-in">（税込154円）</span><!--span class="text-red font-weight-bold">SOLDOUT</span--></p>
 
                   <form method="post" action="/calendar/cart/add" name="form1" id="form1">
 
                       {{ csrf_field() }}
-                      <p>こちらの商品は三次販売開始から大変多くのお客様にご注文を頂戴しており、
-                        追加の増産を行っております。今からご注文の場合、支社様への納品は<span class="text-red text-bold">11月末～12月初旬頃</span>になる可能性がございますので、
-                        ご注意ください。<br>
-                        なお、ご注文量が多い場合はご相談に応じますので、お問い合わせください。</p>
                       <span class="text-blue">※20部以上からのご注文となります</span><br>
                     <div class="form-group row pb-0">
                       <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品</label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin_cd_85" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin_cd_85" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="85">
                           <input type="hidden" name="syouhin_name[]" value="卓上カレンダー（ハガキサイズ）支社納品">
                       </div>
@@ -71,9 +67,9 @@
                       </div>
                     </div>
                     <div class="form-group row pb-0">
-                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin_cd_86" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin_cd_86" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="86">
                           <input type="hidden" name="syouhin_name[]" value="卓上カレンダー（ハガキサイズ）発送代行">
                       </div>
@@ -144,7 +140,7 @@
             </div>
           </div>
 
-          <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2024 年カレンダーイメージ＞</h2>
+          <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダーイメージ＞</h2>
 
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
@@ -155,10 +151,10 @@
 
         <div class="row align-items-center">
           <div class="col-12 col-lg-6 my-3">
-            <img class="img-fluid" src="/images/takuC_img01.jpg" alt="2024 年カレンダーイメージ">
+            <img class="img-fluid" src="/images/takuC_img01.jpg" alt="2025 年カレンダーイメージ">
           </div>
           <div class="col-12 col-lg-6 my-3">
-            <img class="img-fluid" src="/images/takuC_img02.jpg" alt="2024 年カレンダーイメージ">
+            <img class="img-fluid" src="/images/takuC_img02.jpg" alt="2025 年カレンダーイメージ">
           </div>
         </div>
 

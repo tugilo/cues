@@ -43,23 +43,23 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/kabeA_01_SOLD.jpg" class="card-img-top" alt="壁掛けカレンダー（挨拶状/ アンケート付き）">
+                    <img src="/images/kabeA_01.jpg" class="card-img-top" alt="壁掛けカレンダー（挨拶状/ アンケート付き）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
                   <h3 class="item-title h6">壁掛けカレンダー（挨拶状/ アンケート付き）</h3>
-                  <p class="item-price">310<span class="currency">円</span><span class="tax-in">（税込341円）</span></p>
+                  <p class="item-price">300<span class="currency">円</span><span class="tax-in">（税込330円）</span></p>
 
                   <form method="post" action="/calendar/cart/add">
 
                       {{ csrf_field() }}
                       <span class="text-blue">※20部以上からのご注文となります</span><br>
                     <div class="form-group row pb-0">
-                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                        <input type="number" class="form-control amount_field" id="syohin-cd_1" name="syohin_amount[]" value="" placeholder="0" readonly>
+                        <input type="number" class="form-control amount_field" id="syohin-cd_1" name="syohin_amount[]" value="" placeholder="0">
                         <input type="hidden" name="syouhin_cd[]" value="1">
                         <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（挨拶状/ アンケート付き）支社納品">
                       </div>
@@ -68,9 +68,9 @@
                       </div>
                     </div>
                     <div class="form-group row pb-0">
-                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<span class="text-red font-weight-bold">SOLDOUT</span></label>
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_2" name="syohin_amount[]" value="" placeholder="0" readonly>
+                          <input type="number" class="form-control amount_field" id="syohin-cd_2" name="syohin_amount[]" value="" placeholder="0">
                           <input type="hidden" name="syouhin_cd[]" value="2">
                           <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（挨拶状/ アンケート付き）発送代行">
                       </div>
@@ -106,7 +106,7 @@
                       サイズ：横332×縦240mm、6ｍ穴1カ所あり<br>
                       <br>
                       ＜納品されるもの＞<br>
-                      ・カレンダー＋専用窓あき紙封筒　　・挨拶状/アンケート付<br>
+                      ・カレンダー＋専用窓あき紙封筒　　・挨拶状/アンケート付<span class="text-red">（今年より仕様が変わりました）</span><br>
                       ※アンケートの料金受取人払い費用は弊社負担でのご案内です<br>
                       ・個人情報保護ラベル
                   </p>
@@ -126,10 +126,10 @@
 
         <div class="row">
           <div class="col-12 col-lg-6 my-4">
-            <img class="img-fluid" src="/images/aisatu_img02_01.jpg" alt="挨拶状/表">
+            <img class="img-fluid" src="/images/greeting/aisatu_img02_01.jpg" alt="挨拶状/表">
           </div>
           <div class="col-12 col-lg-6 my-4">
-            <img class="img-fluid" src="/images/aisatu_img02_02.jpg" alt="挨拶状/裏">
+            <img class="img-fluid" src="/images/greeting/aisatu_img02_02.jpg" alt="挨拶状/裏">
           </div>
         </div>
         <p class="small text-right">※文言、デザインは予告なく変更する場合がございます。</p>
@@ -137,17 +137,17 @@
         <div class="row row-cols-2 row-cols-lg-3 px-lg-3 justify-content-center">
           <div class="col my-lg-4">
             <div class="card h-100 border-0 px-lg-3">
-              <img src="/images//aisatu_img01_01.jpg" class="img-fluid" alt="返ってくるアンケート郵便代は全て弊社負担">
+              <img src="/images/greeting/aisatu_img01_01.jpg" class="img-fluid" alt="返ってくるアンケート郵便代は全て弊社負担">
             </div>
           </div>
           <div class="col my-lg-4">
             <div class="card h-100 border-0 px-lg-3">
-              <img src="/images//aisatu_img01_02.jpg" class="img-fluid" alt="LP様（差出人）情報は印字済みのため差出人記載が不要">
+              <img src="/images/greeting/aisatu_img01_02.jpg" class="img-fluid" alt="LP様（差出人）情報は印字済みのため差出人記載が不要">
             </div>
           </div>
           <div class="col my-lg-4">
             <div class="card h-100 border-0 px-lg-3">
-              <img src="/images//aisatu_img01_03.jpg" class="img-fluid" alt="お客様への情報提供として好評の経済トピックス">
+              <img src="/images/greeting/aisatu_img01_03.jpg" class="img-fluid" alt="お客様への情報提供として好評の経済トピックス">
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@
       <!-- s:content-box -->
       <section class="content-box">
 
-        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2024 年カレンダー掲載予定画像＞</h2>
+        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダー掲載予定画像＞</h2>
 
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
@@ -175,10 +175,10 @@
 
         <div class="row align-items-center">
           <div class="col-12 col-lg-7 my-3">
-            <img class="img-fluid" src="/images/kabeA_img03.jpg" alt="2024 年カレンダー掲載予定画像">
+            <img class="img-fluid" src="/images/kabeA_img03.jpg" alt="2025 年カレンダー掲載予定画像">
           </div>
           <div class="col-12 col-lg-5 my-3">
-            <img class="img-fluid" src="/images/kabeA_img04.jpg" alt="2024 年カレンダー掲載予定画像">
+            <img class="img-fluid" src="/images/kabeA_img04.jpg" alt="2025 年カレンダー掲載予定画像">
           </div>
         </div>
 

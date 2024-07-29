@@ -30,7 +30,7 @@
         <h2 class="h1">カレンダー発注からお客様お届けまで、<br>ワンストップサービスがおすすめです</h2>
         <p>
             LP様の作業負担はラベルご用意のみとなり、年末多忙な皆様の「時間」を確保することが可能です。<br>
-            （また、本サービスはメール便より品質が高いとされる郵便「ゆうメール」での発送です）<br>
+            （本サービスは郵便「ゆうメール」での発送です）<br>
             <span class="text-red">※挨拶状／アンケート付きカレンダー以外をご注文の場合は、「差出人ラベル」が必要です。</span>
         </p>
 
@@ -74,7 +74,51 @@
           </div>
         </div>
 
-        <div class="bg-headline">
+        <div style="background-color:#e90f0e;color:#ffff;">
+          <h3 class="h5 p-2 text-left pl-3 pt-2 pb-2">今年2024年から 例年の各支社カウンター様での「宛名ラベル」お預かりが無くなります</h3>
+        </div>
+        
+        
+        <div class="row">
+          <div class="col-12 col-lg-9 mt-4">
+            <p class="ml-3">
+              発送代行お申し込みの方々には、個々に
+              <span class="font-weight-bold">弊社提出用「レターパックプラス」をお届けさせて<br>いただきます</span>
+              (全て弊社負担)。こちらへ同じくお届けをする「発送代行依頼書兼宛名ラベル<br>
+              回収封筒」に必要事項を明記し、宛名ラベルを入れ、封を必ず閉じた上でレターパックプラス<br>
+              に入れて、最寄り郵便局(郵便ポスト)から差出をいただきます。<br>
+              <span class="font-weight-bold text-red">(１１月１日(金)弊社到着厳守)</span>
+            </p>
+            <br>
+            <span class="font-weight-bold ml-3" style="display: inline-block; background-color:#ffe450;padding:3px">
+              ※当方より提供するレターパックプラスは1度のみで再発行はいたしません。
+            </span>
+            <p class="ml-3">
+              紛失等なきようご注意願います。<br>
+              <br>
+              ※宛名ラベル提出と共に本レターパックプラスに「同封出来る範囲」で、挨拶状等(同封物)の<br>
+              同時提出を受け付けます。
+            </p>
+          </div>
+          <div class="col-12 col-lg-3 text-center mt-4">
+            <img class="img-fluid" src="/images/mail/img_lpp.jpg" alt="商品イメージ表面">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-lg-12 mb-4">
+            <p class="ml-3">
+              (参考1：レターパックプラスは重量４㎏以内であれば、厚さが３㎝を超えても受け付ける仕様です)<br>
+              (参考2：18面ラベルを目安にする場合、18面ラベル×200シート(3600枚ラベル相当)で2.7㎝/重量1.62㎏と<br>
+              なります。メーカーによる)<br>
+              <span class="font-weight-bold">※同封物のご提出が上記にそぐわない方（例：量が多く入らない、制作が間に合わない等）は、<br>
+              　例年通り11月15日(金)当方必着にてご自身負担でお送りください。</span>
+            </p>
+          </div>
+        </div>
+
+
+        <div class="bg-headline mt-4">
           <h3 class="h5 p-2 text-left">宛名ラベルを、締切日までに ご準備ください</h3>
         </div>
         <div class="row">
@@ -107,7 +151,7 @@
         <div class="bg-headline-red-border p-2 mb-lg-6">
         </div>
         <div class="row d-none d-md-block">
-          <div class="col-12 text-center my-4">
+          <div class="col-100 text-center my-10">
             <img class="img-fluid" src="/images/mail/option.jpg" alt="発送代行スケジュール">
           </div>
         </div>
@@ -117,6 +161,24 @@
           </div>
         </div>
 
+        <div class="row py-2 border-top border-bottom border-dark">
+          <div class="row">
+            <div class="col-12 col-lg-3">
+               <p class="px-2"><span class="font-weight-bold">【別途作業価格/一例】</span></p>
+            </div>
+            <div class="col-12 col-lg-9 ">
+              <p class="px-2">
+               ◆封入物1点追加あたり…10円（税込11円）<br>
+               ◆折加工作業…5円（税込6円）<br>
+               ◆差出人ラベル印刷（1部あたり）…10円（税込11円）<br>
+               ◆個人客様やご自宅への荷物発送(佐川急便1箱あたり)…900円(税込990円) 北海道、沖縄除く全国一律<br>
+               <span class="font-weight-bold text-red">
+                 ◆お客様毎や特定された方のみの発送など「特別な」業務と当方が判断した場合、上記作業単価とは別に、作業時間費(1時間2000円(税込2200円)を頂戴いたします。最低1時間、端数分は切上げの時間請求）
+               </span>
+              </p>
+            </div>
+          </div>
+        </div>
 
       </section>
       <!-- n:content-box -->
