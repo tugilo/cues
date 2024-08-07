@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title', 'ホーム')
+@section('title', '登録完了')
 
 @section('content')
 
@@ -7,6 +7,7 @@
 <section class="register">
   <div class="register-content">
     <div class="container">
+
       <div class="row">
         <div class="col-12 border-top border-bottom mt-5 mb-4 py-3 ">
           <h2 class="h5 text-center mb-0">{{ Session::get('shisya_nm') }} {{ Session::get('name') }}様</h2>
@@ -14,32 +15,41 @@
       </div>
 
       <div class="row justify-content-center row-cols-1 row-cols-lg-3 my-lg-5 py-lg-5">
-        @foreach ($syouhin_syubetus as $syouhin_syubetu)
         <div class="col mb-4">
-            @if ($syouhin_syubetu->open_flg)
-            <a href="{{ $syouhin_syubetu->link }}">
+            <a href="/calendar">
                 <div class="card text-center h-100">
                   <div class="border m-3">
-                    <img src="/assets/images/{{ $syouhin_syubetu->image }}" class="card-img-top" alt="{{ $syouhin_syubetu->syouhin_syubetu_name }}">
+                    <img src="/assets/images/home-calendar.jpg" class="card-img-top" alt="カレンダー">
                   </div>
                   <div class="card-body">
-                    <h3 class="card-title h6 text-muted">{{ $syouhin_syubetu->syouhin_syubetu_name }}</h3>
+                    <h3 class="card-title h6 text-muted">カレンダー</h3>
                   </div>
                 </div>
             </a>
-            @else
-            <div class="card text-center h-100">
-                <div class="border m-3">
-                    <img src="/assets/images/{{ $syouhin_syubetu->image }}" class="card-img-top" alt="{{ $syouhin_syubetu->syouhin_syubetu_name }}">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title h6 text-muted">{{ $syouhin_syubetu->syouhin_syubetu_name }}</h3>
-                </div>
-            </div>
-            @endif
         </div>
-        @endforeach
-      </div>
+        <div class="col mb-4">
+            <!--a href="/syouhin/list?syouhin_syubetu=3"-->
+                <div class="card text-center h-100">
+                    <div class="border m-3">
+                        <img src="/assets/images/home-tee_end.jpg" class="card-img-top" alt="ティー">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title h6 text-muted">ゴルフティ</h3>
+                    </div>
+                </div>
+            <!--/a-->
+        </div>
+        <!--div class="col mb-4">
+          <div class="card text-center h-100">
+            <div class="border m-3">
+              <img src="/assets/images/home-newsletter.jpg" class="card-img-top" alt="ニュースレター発送代行">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title h6 text-muted">ニュースレター発送代行</h3>
+            </div>
+          </div>
+        </div-->
+    </div>
 
       <div class="row mb-5 pb-5">
         <div class="col-lg-6 offset-lg-3">
@@ -59,5 +69,7 @@
 
 @section('js')
 <script>
+
 </script>
+
 @stop

@@ -1,5 +1,5 @@
 @extends('layouts.calendar_page')
-@section('title', $syouhin['web_syouhin_nm'])
+@section('title', '壁掛けカレンダー（挨拶状/ アンケート付き）')
 
 @section('content')
 
@@ -22,8 +22,8 @@
       </span>
       <i class="fas fa-angle-right"></i>
       <span property="itemListElement" typeof="ListItem">
-          <span property="name" class="post post-post current-item">{{ $syouhin['web_syouhin_nm'] }}</span>
-          <meta property="url" content="/calendar/syouhin/detail?syouhin_cd={{ $syouhin['syouhin_cd'] }}">
+          <span property="name" class="post post-post current-item">壁掛けカレンダー（挨拶状/アンケート付き）</span>
+          <meta property="url" content="/calendar/syouhin/detail?syouhin_cd=1">
           <meta property="position" content="3">
       </span>
     </div> <!-- .container -->
@@ -43,66 +43,60 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/kabeA_01.jpg" class="card-img-top" alt="{{ $syouhin['web_syouhin_nm'] }}">
+                    <img src="/images/kabeA_01.jpg" class="card-img-top" alt="壁掛けカレンダー（挨拶状/ アンケート付き）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
-                    <h3 class="item-title h6">{{ $syouhin['web_syouhin_nm'] }}</h3>
-                    <p class="item-price">{{ $syouhin['price'] }}<span class="currency">円</span><span class="tax-in">（税込{{ $syouhin['price_with_tax'] }}円）</span></p>
-            
-                    <form method="post" action="/calendar/cart/add">
-                        {{ csrf_field() }}
+                  <h3 class="item-title h6">壁掛けカレンダー（挨拶状/ アンケート付き）</h3>
+                  <p class="item-price">300<span class="currency">円</span><span class="tax-in">（税込330円）</span></p>
+
+                  <form method="post" action="/calendar/cart/add">
+
+                      {{ csrf_field() }}
                       <!--span class="text-blue">※20部以上からのご注文となります</span><br-->
-                      <div class="form-group row pb-0">
-                            <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品
-                                @if($syouhin['web_soldout_flg'] == 1)
-                                    <span class="text-red font-weight-bold">SOLDOUT</span>
-                                @endif
-                            </label>
-                            <div class="col-6 col-lg-7">
-                                <input type="number" class="form-control amount_field" id="syohin-cd_{{ $syouhin['syouhin_cd'] }}" name="syohin_amount[]" value="" placeholder="0" min="1" step="1" @if($syouhin['web_soldout_flg'] == 1) disabled @endif>
-                                <input type="hidden" name="syouhin_cd[]" value="{{ $syouhin['syouhin_cd'] }}">
-                                <input type="hidden" name="syouhin_name[]" value="{{ $syouhin['web_syouhin_nm'] }}支社納品">
-                            </div>
-                            <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
-                                <span class="text-nowrap">部</span>
-                            </div>
-                        </div>
-                        <div class="form-group row pb-0">
-                            <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行
-                                @if($syouhin['web_hatsou_soldout_flg'] == 1)
-                                    <span class="text-red font-weight-bold">SOLDOUT</span>
-                                @endif
-                            </label>
-                            <div class="col-6 col-lg-7">
-                                <input type="number" class="form-control amount_field" id="syohin-cd_{{ $syouhin['syouhin_cd'] }}" name="syohin_amount[]" value="" placeholder="0" min="1" step="1" @if($syouhin['web_hatsou_soldout_flg'] == 1) disabled @endif>
-                                <input type="hidden" name="syouhin_cd[]" value="{{ $syouhin['syouhin_cd'] }}">
-                                <input type="hidden" name="syouhin_name[]" value="{{ $syouhin['web_syouhin_nm'] }}発送代行">
-                            </div>
-                            <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
-                                <span class="text-nowrap">部</span>
-                            </div>
-                        </div>
-                        <div class="form-group row pb-0 align-items-end">
-                            <label for="inputTotal" class="col-4 col-lg-3 col-form-label pr-lg-0 large">ご注文合計</label>
-                            <div class="col-6 col-lg-7">
-                                <input type="number" class="form-control border-0 order-total no-spin" id="inputTotal" value="0" readonly>
-                            </div>
-                            <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
-                                <span class="text-nowrap">部</span>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-12">
-                                <button class="btn btn-primary w-100" id="btn_cart_add" type="button" disabled>注文する</button>
-                            </div>
-                        </div>
-                    </form>
+                    <div class="form-group row pb-0">
+                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
+                      <div class="col-6 col-lg-7">
+                        <input type="number" class="form-control amount_field" id="syohin-cd_1" name="syohin_amount[]" value="" placeholder="0">
+                        <input type="hidden" name="syouhin_cd[]" value="1">
+                        <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（挨拶状/ アンケート付き）支社納品">
+                      </div>
+                      <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
+                        <span class="text-nowrap">部</span>
+                      </div>
+                    </div>
+                    <div class="form-group row pb-0">
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
+                      <div class="col-6 col-lg-7">
+                          <input type="number" class="form-control amount_field" id="syohin-cd_2" name="syohin_amount[]" value="" placeholder="0">
+                          <input type="hidden" name="syouhin_cd[]" value="2">
+                          <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（挨拶状/ アンケート付き）発送代行">
+                      </div>
+                      <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
+                        <span class="text-nowrap">部</span>
+                      </div>
+                    </div>
+                    <div class="form-group row pb-0 align-items-end">
+                      <label for="inputTotal" class="col-4 col-lg-3 col-form-label pr-lg-0 large">ご注文合計</label>
+                      <div class="col-6 col-lg-7">
+                          <input type="number" class="form-control border-0 order-total no-spin" id="inputTotal" value="0" readonly>
+                      </div>
+                      <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
+                        <span class="text-nowrap">部</span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-12">
+                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button">注文する</button>
+                      </div>
+                    </div>
+                  </form>
+
                 </div>
-            </div>
-            <!-- n:item -->
+              </div>
+              <!-- n:item -->
             </div> <!-- .row -->
 
             <div class="row">
@@ -219,20 +213,20 @@
 
 <script>
 $(function(){
-  $('.amount_field').on('keyup change', function() {
+    $('.amount_field').on('keyup',function() {
         var sum = 0;
         $(".amount_field").each(function(){
             sum += Number($(this).val());
         });
         document.getElementById('inputTotal').value = sum;
-        if(sum >= 1){
+        if(sum > 0){
             $('#btn_cart_add').prop('disabled', false);
-        } else {
+
+        }else{
+
             $('#btn_cart_add').prop('disabled', true);
         }
     });
-
-
     $('#btn_cart_add').on('click', function(){
         var inputTotal = document.getElementById('inputTotal').value;
         if(inputTotal < 20){
@@ -242,6 +236,7 @@ $(function(){
         }else{
             $('#btn_cart_add').prop('disabled', true);
             $('form').submit();
+
         }
     });
     /*
@@ -250,7 +245,7 @@ $(function(){
         $('form').submit();
     });
     */
+
 });
 </script>
 @stop
-                        

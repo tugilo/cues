@@ -91,10 +91,9 @@
             </p>
             <br>
             <span class="font-weight-bold ml-3" style="display: inline-block; background-color:#ffe450;padding:3px">
-              ※当方より提供するレターパックプラスは1度のみで再発行はいたしません。
+              ※当方より提供するレターパックプラスは1度のみで再発行はいたしません。紛失等なきようご注意願います。
             </span>
             <p class="ml-3">
-              紛失等なきようご注意願います。<br>
               <br>
               ※宛名ラベル提出と共に本レターパックプラスに「同封出来る範囲」で、挨拶状等(同封物)の<br>
               同時提出を受け付けます。

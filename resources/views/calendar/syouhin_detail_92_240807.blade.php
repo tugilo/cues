@@ -1,5 +1,5 @@
 @extends('layouts.calendar_page')
-@section('title', $syouhin['web_syouhin_nm'])
+@section('title', '壁掛けカレンダー（A4サイズ【特寸】）')
 
 @section('content')
 
@@ -20,8 +20,8 @@
           </span>
           <i class="fas fa-angle-right"></i>
           <span property="itemListElement" typeof="ListItem">
-              <span property="name" class="post post-post current-item">{{ $syouhin['web_syouhin_nm'] }}</span>
-              <meta property="url" content="/calendar/syouhin/detail?syouhin_cd={{ $syouhin['syouhin_cd'] }}">
+              <span property="name" class="post post-post current-item">壁掛けカレンダー（A4 特寸サイズ）</span>
+              <meta property="url" content="/calendar/syouhin/detail?syouhin_cd=92">
               <meta property="position" content="3">
           </span>
     </div> <!-- .container -->
@@ -41,44 +41,36 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/{{ $syouhin['image'] }}" class="card-img-top" alt="{{ $syouhin['web_syouhin_nm'] }}">
+                    <img src="/images/kabeC_01.jpg" class="card-img-top" alt="壁掛けカレンダー（A4 特寸サイズ）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
-                  <h3 class="item-title h6">{{ $syouhin['web_syouhin_nm'] }}</h3>
-                  <p class="item-price">{{ $syouhin['price'] }}<span class="currency">円</span><span class="tax-in">（税込{{ $syouhin['price_with_tax'] }}円）</span></p>
+                  <h3 class="item-title h6">壁掛けカレンダー（A4サイズ【特寸】）</h3>
+                  <p class="item-price">190<span class="currency">円</span><span class="tax-in">（税込209円）</span></p>
 
                   <form method="post" action="/calendar/cart/add">
 
                       {{ csrf_field() }}
                       <!--span class="text-blue">※20部以上からのご注文となります</span><br-->
-                      <div class="form-group row pb-0">
-                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品
-                          @if ($syouhin['web_soldout_flg'] == 1)
-                              <span class="text-red font-weight-bold">SOLDOUT</span>
-                          @endif
-                      </label>
+                    <div class="form-group row pb-0">
+                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_{{ $syouhin['syouhin_cd'] }}" name="syohin_amount[]" value="" placeholder="0" @if ($syouhin['web_soldout_flg'] == 1) disabled @endif>
-                          <input type="hidden" name="syouhin_cd[]" value="{{ $syouhin['syouhin_cd'] }}">
-                          <input type="hidden" name="syouhin_name[]" value="{{ $syouhin['web_syouhin_nm'] }} 支社納品">
+                          <input type="number" class="form-control amount_field" id="syohin-cd_92" name="syohin_amount[]" value="" placeholder="0">
+                          <input type="hidden" name="syouhin_cd[]" value="92">
+                          <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（A4サイズ【特寸】）支社納品">
                       </div>
                       <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
                         <span class="text-nowrap">部</span>
                       </div>
                     </div>
                     <div class="form-group row pb-0">
-                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行
-                          @if ($syouhin['web_hatsou_soldout_flg'] == 1)
-                              <span class="text-red font-weight-bold">SOLDOUT</span>
-                          @endif
-                      </label>
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
                       <div class="col-6 col-lg-7">
-                          <input type="number" class="form-control amount_field" id="syohin-cd_{{ $syouhin['syouhin_cd'] + 1 }}" name="syohin_amount[]" value="" placeholder="0" @if ($syouhin['web_hatsou_soldout_flg'] == 1) disabled @endif>
-                          <input type="hidden" name="syouhin_cd[]" value="{{ $syouhin['syouhin_cd'] + 1 }}">
-                          <input type="hidden" name="syouhin_name[]" value="{{ $syouhin['web_syouhin_nm'] }} 発送代行">
+                          <input type="number" class="form-control amount_field" id="syohin-cd_93" name="syohin_amount[]" value="" placeholder="0">
+                          <input type="hidden" name="syouhin_cd[]" value="93">
+                          <input type="hidden" name="syouhin_name[]" value="壁掛けカレンダー（A4サイズ【特寸】）発送代行">
                       </div>
                       <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
                         <span class="text-nowrap">部</span>
@@ -95,7 +87,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="col-lg-12">
-                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button" disabled>注文する</button>
+                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button">注文する</button>
                       </div>
                     </div>
                   </form>
@@ -149,65 +141,65 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="bg-light border p-4 border-color-dark">
-              <h3 class="h2 border-bottom border-color-dark pb-2">{{ $syouhin['web_syouhin_nm'] }}ご購入<span class="text-red">【無料特典】</span></h3>
+              <h3 class="h2 border-bottom border-color-dark pb-2">壁掛けカレンダーご購入<span class="text-red">【無料特典】</span></h3>
               <div class="row align-items-center">
                 <div class="col-12 col-lg-7 my-2">
-                  <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今回、<span class="text-red font-weight-bold">{{ $syouhin['web_syouhin_nm'] }}（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
-                  <p class="small">紙面右下のスペースにネームスタンパーを押し、私製挨拶状として、ぜひご活用ください。</p>
-                <div class="text-center my-2">
-                    <a href="/mypage"><img src="/images/go_mypage.png" alt="マイページへ"></a>
+                    <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今回、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
+                    <p class="small">紙面右下のスペースにネームスタンパーを押し、私製挨拶状として、ぜひご活用ください。</p>
+                  <div class="text-center my-2">
+                      <a href="/mypage"><img src="/images/go_mypage.png" alt="マイページへ"></a>
+                  </div>
                 </div>
-              </div>
-              <div class="col-12 col-lg-5 my-2">
-                <img class="img-fluid" src="/images/item/aisatu_sample.png" alt="サンプル">
-                <p class="small text-center text-red">※文言、デザインは予告なく変更する<br>場合がございます。</p>
+                <div class="col-12 col-lg-5 my-2">
+                  <img class="img-fluid" src="/images/item/aisatu_sample.png" alt="サンプル">
+                  <p class="small text-center text-red">※文言、デザインは予告なく変更する<br>場合がございます。</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-    </section>
-    <!-- n:content-box -->
+      </section>
+      <!-- n:content-box -->
 
-    <!-- s:content-box -->
-    <section class="content-box">
+      <!-- s:content-box -->
+      <section class="content-box">
 
-      <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダーイメージ＞</h2>
+        <h2 class="h1 text-center text-dark-blue mt-5 pt-5">＜2025 年カレンダーイメージ＞</h2>
 
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-          <p class="small">見開き2ヶ月掲載のカレンダーです。サイズはA4より少し大きめの特寸サイズです。</p>
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <p class="small">見開き2ヶ月掲載のカレンダーです。サイズはA4より少し大きめの特寸サイズです。</p>
+          </div>
         </div>
-      </div>
 
-      <div class="row align-items-center">
-        <div class="col-12 col-lg-7 my-3">
-          <img class="img-fluid" src="/images/kabeC_img01.jpg" alt="2025 年カレンダーイメージ">
-        </div>
-        <div class="col-12 col-lg-5 my-3">
-          <img class="img-fluid" src="/images/kabeC_img02.jpg" alt="2025 年カレンダーイメージ">
-        </div>
-      </div>
-
-      <div class="mt-5">
         <div class="row align-items-center">
-          <div class="col-lg-2 my-3">
-            <img src="/images/kabeC_img03.jpg" class="img-fluid" alt="AYANA">
+          <div class="col-12 col-lg-7 my-3">
+            <img class="img-fluid" src="/images/kabeC_img01.jpg" alt="2025 年カレンダーイメージ">
           </div>
-          <div class="col-lg-10 my-3">
-            <p class="small">＜作者紹介＞</p>
-            <p class="font-weight-bold">AYANA <span class="small">ARTIST</span></p>
-            <p class="small"><span class="font-weight-bold">異国の生活、普通の日常を明るく、気軽に、お届け出来ればと思い、日々写真に納めています。</span><br><span class="font-weight-bold">少し忘れていた風景で、皆さんが元気になりますように。</span><br>（2021年2月イギリス ケンブリッジに渡り、2022年9月からロンドンを拠点に活動中。）</p>
+          <div class="col-12 col-lg-5 my-3">
+            <img class="img-fluid" src="/images/kabeC_img02.jpg" alt="2025 年カレンダーイメージ">
           </div>
         </div>
-      </div>
 
-    </section>
-    <!-- n:content-box -->
+        <div class="mt-5">
+          <div class="row align-items-center">
+            <div class="col-lg-2 my-3">
+              <img src="/images/kabeC_img03.jpg" class="img-fluid" alt="AYANA">
+            </div>
+            <div class="col-lg-10 my-3">
+              <p class="small">＜作者紹介＞</p>
+              <p class="font-weight-bold">AYANA <span class="small">ARTIST</span></p>
+              <p class="small"><span class="font-weight-bold">異国の生活、普通の日常を明るく、気軽に、お届け出来ればと思い、日々写真に納めています。</span><br><span class="font-weight-bold">少し忘れていた風景で、皆さんが元気になりますように。</span><br>（2021年2月イギリス ケンブリッジに渡り、2022年9月からロンドンを拠点に活動中。）</p>
+            </div>
+          </div>
+        </div>
 
-  </div> <!-- .container -->
-</div>
+      </section>
+      <!-- n:content-box -->
+
+    </div> <!-- .container -->
+  </div>
 </article> <!-- .main-content -->
 
 
@@ -218,20 +210,20 @@
 @section('js')
 <script>
 $(function(){
-  $('.amount_field').on('keyup change', function() {
+    $('.amount_field').on('keyup',function() {
         var sum = 0;
         $(".amount_field").each(function(){
             sum += Number($(this).val());
         });
         document.getElementById('inputTotal').value = sum;
-        if(sum >= 1){
+        if(sum > 0){
             $('#btn_cart_add').prop('disabled', false);
-        } else {
+
+        }else{
+
             $('#btn_cart_add').prop('disabled', true);
         }
     });
-
-
     $('#btn_cart_add').on('click', function(){
         var inputTotal = document.getElementById('inputTotal').value;
         if(inputTotal < 20){
@@ -241,6 +233,7 @@ $(function(){
         }else{
             $('#btn_cart_add').prop('disabled', true);
             $('form').submit();
+
         }
     });
     /*
@@ -249,6 +242,7 @@ $(function(){
         $('form').submit();
     });
     */
+
 });
 </script>
 

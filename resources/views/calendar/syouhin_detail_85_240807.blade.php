@@ -1,5 +1,5 @@
 @extends('layouts.calendar_page')
-@section('title', $syouhin['web_syouhin_nm'])
+@section('title', '卓上カレンダー（ハガキサイズ）')
 
 @section('content')
 
@@ -22,9 +22,8 @@
       </span>
       <i class="fas fa-angle-right"></i>
       <span property="itemListElement" typeof="ListItem">
-          <span property="name" class="post post-post current-item">{{ $syouhin['web_syouhin_nm'] }}</span>
-          <meta property="url" content="/calendar/syouhin/detail?syouhin_cd={{ $syouhin['syouhin_cd'] }}">
-          <meta property="position" content="3">
+          <span property="name" class="post post-post current-item">卓上カレンダー（ハガキサイズ）</span>
+          <meta property="url" content="/calendar/syouhin/detail?syouhin_cd=85"><meta property="position" content="3">
       </span>
     </div> <!-- .container -->
   </div>
@@ -43,44 +42,38 @@
               <div class="col-lg-6 mb-4">
                 <div class="item-image text-center">
                   <div class="border-0">
-                    <img src="/images/{{ $syouhin['image'] }}" class="card-img-top" alt="{{ $syouhin['web_syouhin_nm'] }}">
+                    <img src="/images/takuC_01.jpg" class="card-img-top" alt="卓上カレンダー（ハガキサイズ）">
                   </div>
                 </div>
               </div>
               <div class="col-lg-6 mb-4">
                 <div class="item-description">
-                  <h3 class="item-title h6">{{ $syouhin['web_syouhin_nm'] }}</h3>
-                  <p class="item-price">{{ $syouhin['price'] }}<span class="currency">円</span><span class="tax-in">（税込{{ $syouhin['price_with_tax'] }}円）</span></p>
+                  <h3 class="item-title h6">卓上カレンダー（ハガキサイズ）</h3>
+                  <p class="item-price">140<span class="currency">円</span><span class="tax-in">（税込154円）</span><!--span class="text-red font-weight-bold">SOLDOUT</span--></p>
 
                   <form method="post" action="/calendar/cart/add" name="form1" id="form1">
 
                       {{ csrf_field() }}
                       <span class="text-blue">※20部以上からのご注文となります</span><br>
-                      <div class="form-group row pb-0">
-                        <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品</label>
-                        <div class="col-6 col-lg-7">
-                            <input type="number" class="form-control amount_field" id="syohin_cd_85" name="syohin_amount[]" value="" placeholder="0" {{ $syouhin['web_soldout_flg'] ? 'disabled' : '' }}>
-                            <input type="hidden" name="syouhin_cd[]" value="85">
-                            <input type="hidden" name="syouhin_name[]" value="{{ $syouhin['web_syouhin_nm'] }} 支社納品">
-                            @if ($syouhin['web_soldout_flg'])
-                            <span class="text-red font-weight-bold">SOLDOUT</span>
-                            @endif
-                        </div>
-                        <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
-                          <span class="text-nowrap">部</span>
-                        </div>
+                    <div class="form-group row pb-0">
+                      <label for="inputOption1" class="col-4 col-lg-3 col-form-label pr-lg-0">支社納品</label>
+                      <div class="col-6 col-lg-7">
+                          <input type="number" class="form-control amount_field" id="syohin_cd_85" name="syohin_amount[]" value="" placeholder="0">
+                          <input type="hidden" name="syouhin_cd[]" value="85">
+                          <input type="hidden" name="syouhin_name[]" value="卓上カレンダー（ハガキサイズ）支社納品">
                       </div>
-                      <div class="form-group row pb-0">
-                        <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行</label>
-                        <div class="col-6 col-lg-7">
-                            <input type="number" class="form-control amount_field" id="syohin_cd_86" name="syohin_amount[]" value="" placeholder="0" {{ $syouhin['web_hatsou_soldout_flg'] ? 'disabled' : '' }}>
-                            <input type="hidden" name="syouhin_cd[]" value="86">
-                            <input type="hidden" name="syouhin_name[]" value="{{ $syouhin['web_syouhin_nm'] }} 発送代行">
-                            @if ($syouhin['web_hatsou_soldout_flg'])
-                            <span class="text-red font-weight-bold">SOLDOUT</span>
-                            @endif
-                        </div>
-                        <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
+                      <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
+                        <span class="text-nowrap">部</span>
+                      </div>
+                    </div>
+                    <div class="form-group row pb-0">
+                      <label for="inputOption2" class="col-4 col-lg-3 col-form-label pr-lg-0">発送代行<!--span class="text-red font-weight-bold">SOLDOUT</span--></label>
+                      <div class="col-6 col-lg-7">
+                          <input type="number" class="form-control amount_field" id="syohin_cd_86" name="syohin_amount[]" value="" placeholder="0">
+                          <input type="hidden" name="syouhin_cd[]" value="86">
+                          <input type="hidden" name="syouhin_name[]" value="卓上カレンダー（ハガキサイズ）発送代行">
+                      </div>
+                      <div class="col-2 col-lg-2 pl-0 text-left col-form-label">
                         <span class="text-nowrap">部</span>
                       </div>
                     </div>
@@ -95,7 +88,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="col-lg-12">
-                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button" disabled>注文する</button>
+                          <button class="btn btn-primary w-100" id="btn_cart_add" type="button">注文する</button>
                       </div>
                     </div>
                   </form>
@@ -172,6 +165,7 @@
   </div>
 </article> <!-- .main-content -->
 
+
 @stop
 @section('css')
 @stop
@@ -185,13 +179,14 @@ $(function(){
             sum += Number($(this).val());
         });
         document.getElementById('inputTotal').value = sum;
-        if(sum >= 20){
+        if(sum > 0){
             $('#btn_cart_add').prop('disabled', false);
+
         }else{
+
             $('#btn_cart_add').prop('disabled', true);
         }
     });
-
     $('#btn_cart_add').on('click', function(){
         var inputTotal = document.getElementById('inputTotal').value;
         if(inputTotal < 20){
@@ -199,8 +194,11 @@ $(function(){
         }else{
             $('#btn_cart_add').prop('disabled', true);
             $('form').submit();
+
         }
-    });
+     });
+
 });
 </script>
+
 @stop

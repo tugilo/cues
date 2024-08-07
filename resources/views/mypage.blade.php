@@ -27,7 +27,11 @@
       @if($flgs[0]->download_button_flag == 1)
 
       <div class="text-center mt-4">
-        <img src="/images/aisatsu_download.png" alt="挨拶状ダウンロード"data-toggle="modal" data-target="#modal_download_aisatu_pdf"  style="cursor: pointer;">
+        <span class="font-weight-bold ml-3" style="display: inline-block; background-color:#ffe450;padding:10px">
+          無料特典の挨拶状は9月初旬にリリースとなります。
+        </span>
+
+        <!--img src="/images/aisatsu_download.png" alt="挨拶状ダウンロード"data-toggle="modal" data-target="#modal_download_aisatu_pdf"  style="cursor: pointer;"-->
           <!--img data-toggle="modal" data-target="#modal_download_aisatu_pdf"  src="/images/dl_pdf.png" style="cursor: pointer;"-->
       </div>
       @endif

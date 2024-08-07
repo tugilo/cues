@@ -28,153 +28,97 @@ class CalendarSyouhinController extends Controller
 
     public function ShowSyouhinlist(Request $request)
     {
-        Log::info(print_r(session()->all(), true));
-        $now = new Carbon('now');
-        
-        // 固定の日付に設定
-        //$now = Carbon::create(2024, 12, 10);
-        Log::info(print_r('now:' . $now, true));
+        Log::info(print_r($request->all(), true));
+        $syouhin_syubetu = $request->syouhin_syubetu;
+        $now = Carbon::now();
+        return view('calendar.syouhin_list',[
+            'syouhin_syubetu' => $syouhin_syubetu,
+        ]);
+        /*
+        $sql = "SELECT
+            SCM.syouhin_category_cd,
+            SCM.web_syouhin_category_nm,
+            SCM.web_syouhin_image1,
+            SCM.web_disp_order,
+            STM.sold_count
+            FROM web_m_syouhin_category AS SCM
+            LEFT JOIN (
+            	Select
+            	SM.config_id ,
+            	SM.syouhin_category_cd,
+            	SUM(STM.sold_flg) AS sold_count
+            	FROM web_m_syouhin AS SM
+            	LEFT JOIN (
+            		SELECT
+                    STM.config_id,
+            		STM.syouhin_cd,
+            		STM.select_stat_dt,
+            		(CASE WHEN ifnull(STM.web_soldout_flg, 1)=0 THEN 1 ELSE 0 END) AS sold_flg
+            		FROM web_m_syouhin_tanka AS STM
+            		INNER JOIN (
+            			SELECT
+            			STM.config_id,
+            			STM.syouhin_cd,
+            			max(STM.select_stat_dt) AS select_stat_dt
+            			FROM web_m_syouhin_tanka AS STM
+            			WHERE STM.select_stat_dt <= '".$now."'
+            			GROUP BY STM.config_id, STM.syouhin_cd) AS SSTM
+            			ON SSTM.config_id = STM.config_id
+                        AND SSTM.syouhin_cd = STM.syouhin_cd
+            			AND SSTM.select_stat_dt = STM.select_stat_dt) AS STM
+            			ON STM.config_id = SM.config_id AND STM.syouhin_cd = SM.syouhin_cd
+            			WHERE SM.web_disp_flg = true
+            			GROUP BY SM.config_id, SM.syouhin_category_cd) AS STM
+            		ON STM.config_id = SCM.config_id AND STM.syouhin_category_cd = SCM.syouhin_category_cd
+            WHERE SCM.config_id = 1 AND SCM.syouhin_syubetu = '".$syouhin_syubetu."' AND SCM.web_disp_flg = true
+    		ORDER BY SCM.web_disp_order";
+        $syouhinlist = DB::select($sql);
 
-        // 商品一覧を取得し、web_disp_orderで並び替える
-        $syouhins = WebMSyouhin::where('syouhin_syubetu', 1)
-            ->orderBy('web_disp_order', 'asc')
-            ->get(['syouhin_cd', 'web_syouhin_nm', 'web_disp_flg', 'syouhin_color']);
-        
-        $syouhin_data = [];
-    
-        foreach ($syouhins as $syouhin) {
-            // 単価情報を取得
-            $tanka = WebMSyouhinTanka::where('syouhin_cd', $syouhin->syouhin_cd)
-                ->where('select_stat_dt', '<=', $now)
-                ->orderBy('select_stat_dt', 'desc')
-                ->first();
-    
-            // 表示する単価を設定
-            $price = $tanka ? $tanka->web_syouhin_tanka : 'N/A';
-    
-            // 税込価格を計算
-            $tax_rate = 0.10; // 消費税率10%
-            $price_with_tax = $price !== 'N/A' ? round($price * (1 + $tax_rate)) : 'N/A';
-    
-            // 画像ファイル名を設定
-            switch ($syouhin->syouhin_cd) {
-                case 1:
-                    $image = 'kabeA_01.jpg';
-                    break;
-                case 4:
-                    $image = 'kabeB_01.jpg';
-                    break;
-                case 92:
-                    $image = 'kabeC_01.jpg';
-                    break;
-                case 7:
-                    $image = 'takuA_01.jpg';
-                    break;
-                case 10:
-                    $image = 'takuB_01.jpg';
-                    break;
-                case 85:
-                    $image = 'takuC_01.jpg';
-                    break;
-                default:
-                    $image = 'default.jpg';
-                    break;
-            }
-    
-            // 商品データを配列に追加
-            $syouhin_data[] = [
-                'syouhin_cd' => $syouhin->syouhin_cd,
-                'web_syouhin_nm' => $syouhin->web_syouhin_nm,
-                'web_disp_flg' => $syouhin->web_disp_flg,
-                'syouhin_color' => $syouhin->syouhin_color,
-                'price' => $price,
-                'price_with_tax' => $price_with_tax,
-                'image' => $image,
-            ];
+        Log::info(print_r($syouhinlist, true));
+
+        $now = new Carbon('now');
+        Log::info(print_r('now:'.$now, true));
+        $syouhin_syubetu = WebMSyouhinSyubetu::where('syouhin_syubetu', '=', 3)->first();
+
+        $open_day = new Carbon($syouhin_syubetu->syouhin_syubetu_open_dt);
+        Log::info(print_r('open_day:'.$open_day, true));
+        $close_day = new Carbon($syouhin_syubetu->syouhin_syubetu_close_dt);
+        Log::info(print_r('close_day:'.$close_day, true));
+        if($now->format('Y-m-d H:i') >= $open_day->format('Y-m-d H:i') && $now->format('Y-m-d H:i') < $close_day->format('Y-m-d H:i'))
+        {
+            $open_flg = 1;
+        }else{
+            $open_flg = 0;
         }
-    
-        // 商品データをログに出力
-        Log::info('Syouhin Data:', $syouhin_data);
-    
-        return view('calendar.syouhin_list', ['syouhins' => $syouhin_data]);
+        if($open_flg == 1)
+        {
+
+            Log::info(print_r('open_flg:'.$open_flg, true));
+            return view('calendar.syouhin_list_saihan',[
+                'syouhinlist' => $syouhinlist,
+
+            ]);
+
+        }else{
+            Log::info(print_r('open_flg:'.$open_flg, true));
+            return view('calendar.syouhin_list',[
+                'syouhinlist' => $syouhinlist,
+
+            ]);
+
+        }
+        */
+
     }
-    
     public function ShowSyouhinDetail(Request $request)
     {
         Log::info(print_r($request->all(), true));
         Log::info(print_r(session()->all(), true));
-    
         $syouhin_cd = $request->syouhin_cd;
-        $now = new Carbon('now');
-        
-        // 固定の日付に設定
-        //$now = Carbon::create(2024, 12, 10);
-        Log::info(print_r('now:' . $now, true));
 
-    
-        // 商品情報を取得
-        $syouhin = WebMSyouhin::where('syouhin_cd', $syouhin_cd)->first(['syouhin_cd', 'web_syouhin_nm', 'web_disp_flg', 'syouhin_color']);
-    
-        if ($syouhin) {
-            // 単価情報を取得
-            $tanka = WebMSyouhinTanka::where('syouhin_cd', $syouhin_cd)
-                ->where('select_stat_dt', '<=', $now)
-                ->orderBy('select_stat_dt', 'desc')
-                ->first();
-    
-            // 表示する単価を設定
-            $price = $tanka ? $tanka->web_syouhin_tanka : 'N/A';
-            $web_soldout_flg = $tanka ? $tanka->web_soldout_flg : 0;
-            $web_hatsou_soldout_flg = $tanka ? $tanka->web_hatsou_soldout_flg : 0;
-    
-            // 税込価格を計算
-            $tax_rate = 0.10; // 消費税率10%
-            $price_with_tax = $price !== 'N/A' ? round($price * (1 + $tax_rate)) : 'N/A';
-    
-            // 商品データを配列に追加
-            $syouhin_data = [
-                'syouhin_cd' => $syouhin->syouhin_cd,
-                'web_syouhin_nm' => $syouhin->web_syouhin_nm,
-                'web_disp_flg' => $syouhin->web_disp_flg,
-                'syouhin_color' => $syouhin->syouhin_color,
-                'price' => $price,
-                'price_with_tax' => $price_with_tax,
-                'web_soldout_flg' => $web_soldout_flg,
-                'web_hatsou_soldout_flg' => $web_hatsou_soldout_flg,
-                'image' => $this->getImageFilename($syouhin_cd),
-            ];    
-            // 商品データをログに出力
-            Log::info('Syouhin Data:', $syouhin_data);
-    
-            return view('calendar.syouhin_detail_' . $syouhin_cd, [
-                'syouhin' => $syouhin_data
-            ]);
-        }
-    
-        // 商品が見つからない場合は404ページを表示
-        abort(404);
+        return view('calendar.syouhin_detail_'.$syouhin_cd,[
+        ]);
     }
-    
-    private function getImageFilename($syouhin_cd)
-    {
-        switch ($syouhin_cd) {
-            case 1:
-                return 'kabeA_01.jpg';
-            case 4:
-                return 'kabeB_01.jpg';
-            case 92:
-                return 'kabeC_01.jpg';
-            case 7:
-                return 'takuA_01.jpg';
-            case 10:
-                return 'takuB_01.jpg';
-            case 85:
-                return 'takuC_01.jpg';
-            default:
-                return 'default.jpg';
-        }
-    }
-
     public function CartAdd(Request $request)
     {
         Log::info(print_r($request->all(), true));

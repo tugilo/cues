@@ -85,293 +85,66 @@
 
 <script>
 $(document).ready(function() {
-    var sum = document.getElementById('inputTotal').value;
-    if(sum > 0){
-        $('#btn_cart_add').prop('disabled', false);
+    const $btnCartAdd = $('#btn_cart_add');
+    const $inputTotal = $('#inputTotal');
+    const $form = $('#form1');
 
-    }else{
+    // 合計金額の更新と購入ボタンの有効/無効を管理する関数
+    const updateTotalAndButton = () => {
+        const sum = Array.from($(".amount_field")).reduce((total, field) => total + Number(field.value), 0);
+        $inputTotal.val(sum);
+        $btnCartAdd.prop('disabled', sum === 0);
+    };
 
-        $('#btn_cart_add').prop('disabled', true);
-    }
-});
-$(function(){
+    // 初期状態の設定
+    updateTotalAndButton();
 
-    $('.btn-delete').on('click', function(){
-        var id = this.id;
-        var sid = id.split('_');
-        location.href = "/calendar/cart/delete?delete_syouhin_cd="+sid[1];
+    // 削除ボタンのイベントハンドラ
+    $('.btn-delete').on('click', function() {
+        const syouhinCd = this.id.split('_')[1];
+        location.href = `/calendar/cart/delete?delete_syouhin_cd=${syouhinCd}`;
     });
-    $('#btn_back_home').on('click', function(){
+
+    // 「買い物を続ける」ボタンのイベントハンドラ
+    $('#btn_back_home').on('click', () => {
         location.href = "/calendar/syouhin/list?syouhin_syubetu=1";
     });
 
-    $('.amount_field').on('keyup', function() {
-        var sum = 0;
-        var token = $('input[name="_token"]').val();
-        $(".amount_field").each(function(){
-            sum += Number($(this).val());
+    // 数量フィールドの変更イベントハンドラ
+    $('.amount_field').on('input', updateTotalAndButton);
+
+    // 購入ボタンのイベントハンドラ
+    $btnCartAdd.on('click', () => {
+        // 商品IDのペアと最小注文数を定義
+        const itemPairs = [
+            { ids: [85, 86], minOrder: 20, name: "卓上カレンダー（ハガキサイズ）" },
+            // 以下のペアは現在使用しないためコメントアウト
+            // { ids: [1, 2], minOrder: 10, name: "壁掛けカレンダー（挨拶状/ アンケート付き）" },
+            // { ids: [4, 5], minOrder: 10, name: "壁掛けカレンダー" },
+            // { ids: [7, 8], minOrder: 10, name: "卓上カレンダー（B6サイズ）（LP様情報あり）" },
+            // { ids: [92, 93], minOrder: 10, name: "壁掛けカレンダー（A4サイズ【特寸】）" },
+            // { ids: [10, 11], minOrder: 10, name: "卓上カレンダー（B6サイズ）" }
+        ];
+        
+        let errorMessages = [];
+
+        itemPairs.forEach(pair => {
+            const sum = pair.ids.reduce((total, id) => {
+                const $input = $(`#inputItemName_${id}`);
+                return total + ($input.length ? parseInt($input.val()) || 0 : 0);
+            }, 0);
+            
+            if (sum > 0 && sum < pair.minOrder) {
+                errorMessages.push(`${pair.name}の合計は${pair.minOrder}部以上からのご注文となります`);
+            }
         });
-        document.getElementById('inputTotal').value = sum;
 
-        if(sum > 0){
-            $('#btn_cart_add').prop('disabled', false);
-
-        }else{
-
-            $('#btn_cart_add').prop('disabled', true);
+        if (errorMessages.length > 0) {
+            alert(errorMessages.join("\n"));
+        } else {
+            $form.submit();
+            $btnCartAdd.prop('disabled', true);
         }
     });
-    $('#btn_cart_add').on('click', function(){
-        if($('#inputItemName_85').length && $('#inputItemName_86').length){
-            var sum_flg_85 = 0;
-            var taku_sum = 0;
-            var inputItemName_85 = parseInt(document.getElementById('inputItemName_85').value);
-            var inputItemName_86 = parseInt(document.getElementById('inputItemName_86').value);
-            var taku_sum_85 = inputItemName_85 + inputItemName_86;
-            if(taku_sum_85 < 20){
-                var sum_flg_85 = 1;
-            }else{
-                var sum_flg_85 = 0;
-            }
-            var taku_flg = 1;
-        }else if($('#inputItemName_85').length && !$('#inputItemName_86').length){
-            var taku_sum = 0;
-            var inputItemName_85 = parseInt(document.getElementById('inputItemName_85').value);
-            var inputItemName_86 = 0;
-            var taku_sum_85 = inputItemName_85 + inputItemName_86;
-            if(taku_sum_85 < 20){
-                var sum_flg_85 = 1;
-            }else{
-                var sum_flg_85 = 0;
-            }
-            var taku_flg = 1;
-        }else if(!$('#inputItemName_85').length && $('#inputItemName_86').length){
-            var taku_sum = 0;
-            var inputItemName_85 = 0;
-            var inputItemName_86 = parseInt(document.getElementById('inputItemName_86').value);
-            var taku_sum_85 = inputItemName_85 + inputItemName_86;
-            if(taku_sum_85 < 20){
-                var sum_flg_85 = 1;
-            }else{
-                var sum_flg_85 = 0;
-            }
-            var taku_flg = 1;
-
-        }else{
-            var inputItemName_85 = 0;
-            var inputItemName_86 = 0;
-            var sum_flg_85 = 0;
-            var taku_flg = 0;
-        }
-        if($('#inputItemName_1').length && $('#inputItemName_2').length){
-            var taku_sum_1 = 0;
-            var inputItemName_1 = parseInt(document.getElementById('inputItemName_1').value);
-            var inputItemName_2 = parseInt(document.getElementById('inputItemName_2').value);
-            var taku_sum_1 = inputItemName_1 + inputItemName_2;
-            if(taku_sum_1 < 20){
-                var sum_flg_1 = 1;
-            }else{
-                var sum_flg_1 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if($('#inputItemName_1').length && !$('#inputItemName_2').length){
-            var taku_sum_1 = 0;
-            var inputItemName_1 = parseInt(document.getElementById('inputItemName_1').value);
-            var inputItemName_2 = 0;
-            var taku_sum_1 = inputItemName_1 + inputItemName_2;
-            if(taku_sum_1 < 20){
-                var sum_flg_1 = 1;
-            }else{
-                var sum_flg_1 = 0;
-            }
-            var taku_flg = 1;
-        }else if(!$('#inputItemName_1').length && $('#inputItemName_2').length){
-            var taku_sum_1 = 0;
-            var inputItemName_1 = 0;
-            var inputItemName_2 = parseInt(document.getElementById('inputItemName_2').value);
-            var taku_sum_1 = inputItemName_1 + inputItemName_2;
-            if(taku_sum_1 < 20){
-                var sum_flg_1 = 1;
-            }else{
-                var sum_flg_1 = 0;
-            }
-           var taku_flg = 1;
-        }else{
-            var inputItemName_1 = 0;
-            var inputItemName_2 = 0;
-            var taku_flg = 0;
-            var sum_flg_1 = 0;
-
-        }
-        if($('#inputItemName_4').length && $('#inputItemName_5').length){
-            var taku_sum_4 = 0;
-            var inputItemName_4 = parseInt(document.getElementById('inputItemName_4').value);
-            var inputItemName_5 = parseInt(document.getElementById('inputItemName_5').value);
-            var taku_sum_4 = inputItemName_4 + inputItemName_5;
-            if(taku_sum_4 < 20){
-                var sum_flg_4 = 1;
-            }else{
-                var sum_flg_4 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if($('#inputItemName_4').length && !$('#inputItemName_5').length){
-            var taku_sum_4 = 0;
-            var inputItemName_4 = parseInt(document.getElementById('inputItemName_4').value);
-            var inputItemName_5 = 0;
-            var taku_sum_4 = inputItemName_4 + inputItemName_5;
-            if(taku_sum_4 < 20){
-                var sum_flg_4 = 1;
-            }else{
-                var sum_flg_4 = 0;
-            }
-            var taku_flg = 1;
-        }else if(!$('#inputItemName_4').length && $('#inputItemName_5').length){
-            var taku_sum_4 = 0;
-            var inputItemName_4 = 0;
-            var inputItemName_5 = parseInt(document.getElementById('inputItemName_5').value);
-            var taku_sum_4 = inputItemName_4 + inputItemName_5;
-            if(taku_sum_4 < 20){
-                var sum_flg_4 = 1;
-            }else{
-                var sum_flg_4 = 0;
-            }
-           var taku_flg = 1;
-        }else{
-            var inputItemName_4 = 0;
-            var inputItemName_5 = 0;
-            var taku_flg = 0;
-            var sum_flg_4 = 0;
-
-        }
-        if($('#inputItemName_7').length && $('#inputItemName_8').length){
-            var taku_sum_7 = 0;
-            var inputItemName_7 = parseInt(document.getElementById('inputItemName_7').value);
-            var inputItemName_8 = parseInt(document.getElementById('inputItemName_8').value);
-            var taku_sum_7 = inputItemName_7 + inputItemName_8;
-            if(taku_sum_7 < 20){
-                var sum_flg_7 = 1;
-            }else{
-                var sum_flg_7 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if($('#inputItemName_7').length && !$('#inputItemName_8').length){
-            var taku_sum_7 = 0;
-            var inputItemName_7 = parseInt(document.getElementById('inputItemName_7').value);
-            var inputItemName_8 = 0;
-            var taku_sum_7 = inputItemName_7 + inputItemName_8;
-            if(taku_sum_7 < 20){
-                var sum_flg_7 = 1;
-            }else{
-                var sum_flg_7 = 0;
-            }
-            var taku_flg = 1;
-        }else if(!$('#inputItemName_7').length && $('#inputItemName_8').length){
-            var taku_sum_7 = 0;
-            var inputItemName_7 = 0;
-            var inputItemName_8 = parseInt(document.getElementById('inputItemName_8').value);
-            var taku_sum_7 = inputItemName_7 + inputItemName_8;
-            if(taku_sum_7 < 20){
-                var sum_flg_7 = 1;
-            }else{
-                var sum_flg_7 = 0;
-            }
-           var taku_flg = 1;
-        }else{
-            var inputItemName_7 = 0;
-            var inputItemName_8 = 0;
-            var taku_flg = 0;
-            var sum_flg_7 = 0;
-
-        }
-        if($('#inputItemName_92').length && $('#inputItemName_93').length){
-            var taku_sum_92 = 0;
-            var inputItemName_92 = parseInt(document.getElementById('inputItemName_92').value);
-            var inputItemName_93 = parseInt(document.getElementById('inputItemName_93').value);
-            var taku_sum_92 = inputItemName_92 + inputItemName_93;
-            if(taku_sum_92 < 20){
-                var sum_flg_92 = 1;
-            }else{
-                var sum_flg_92 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if($('#inputItemName_92').length && !$('#inputItemName_92').length){
-            var taku_sum_92 = 0;
-            var inputItemName_92 = parseInt(document.getElementById('inputItemName_92').value);
-            var inputItemName_93 = 0;
-            var taku_sum_92 = inputItemName_92 + inputItemName_93;
-            if(taku_sum_92 < 20){
-                var sum_flg_92 = 1;
-            }else{
-                var sum_flg_92 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if(!$('#inputItemName_92').length && $('#inputItemName_92').length){
-            var taku_sum_92 = 0;
-            var inputItemName_92 = 0;
-            var inputItemName_93 = parseInt(document.getElementById('inputItemName_93').value);
-            var taku_sum_92 = inputItemName_92 + inputItemName_93;
-            if(taku_sum_92 < 20){
-                var sum_flg_92 = 1;
-            }else{
-                var sum_flg_92 = 0;
-            }
-            var taku_flg_1 = 1;
-       }else{
-            var inputItemName_92 = 0;
-            var inputItemName_93 = 0;
-            var taku_flg = 0;
-            var sum_flg_92 = 0;
-
-        }
-        if($('#inputItemName_10').length && $('#inputItemName_11').length){
-            var taku_sum_10 = 0;
-            var inputItemName_10 = parseInt(document.getElementById('inputItemName_10').value);
-            var inputItemName_11 = parseInt(document.getElementById('inputItemName_11').value);
-            var taku_sum_10 = inputItemName_10 + inputItemName_11;
-            if(taku_sum_10 < 20){
-                var sum_flg_10 = 1;
-            }else{
-                var sum_flg_10 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if($('#inputItemName_10').length && !$('#inputItemName_11').length){
-            var taku_sum_10 = 0;
-            var inputItemName_10 = parseInt(document.getElementById('inputItemName_10').value);
-            var inputItemName_11 = 0;
-            var taku_sum_10 = inputItemName_10 + inputItemName_11;
-            if(taku_sum_10 < 20){
-                var sum_flg_10 = 1;
-            }else{
-                var sum_flg_10 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else if(!$('#inputItemName_10').length && $('#inputItemName_11').length){
-            var taku_sum_10 = 0;
-            var inputItemName_10 = 0;
-            var inputItemName_11 = parseInt(document.getElementById('inputItemName_11').value);
-            var taku_sum_10 = inputItemName_10 + inputItemName_11;
-            if(taku_sum_10 < 20){
-                var sum_flg_10 = 1;
-            }else{
-                var sum_flg_10 = 0;
-            }
-            var taku_flg_1 = 1;
-        }else{
-            var inputItemName_10 = 0;
-            var inputItemName_11 = 0;
-            var taku_flg = 0;
-            var sum_flg_10 = 0;
-
-        }
-
-        if(sum_flg_1 == 1 || sum_flg_4 == 1 || sum_flg_7 == 1 || sum_flg_92 == 1 || sum_flg_10 == 1 || sum_flg_85 == 1){
-            alert('20部以上からのご注文となります');
-        }else{
-            $('#form1').submit();
-            $('#btn_submit').prop('disabled', 'true');
-        }
-    });
-});
-
-</script>
+});</script>
 @stop

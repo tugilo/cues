@@ -55,7 +55,8 @@
 
             <div class="form-group row">
               <div class="col-12">
-                <p class="text-red text-center small">お支払いは、口座振替ご登録済みの方は口座振替にて、<br>未登録の方はご請求書をお送りいたします（次年度は口座振替となりますのでご登録をお願いいたします）。</p>
+                <p class="text-red text-right small">お支払いは、口座振替ご登録済みの方は口座振替にて、<br>未登録の方はご請求書をお送りいたします（次年度は口座振替となりますのでご登録をお願いいたします）。</p>
+                <p class="text-right small bold">※支社様納品は1注文あたり500円（税込550円）となります。</p>
               </div>
             </div>
             @if($hatsu_flg == 1)

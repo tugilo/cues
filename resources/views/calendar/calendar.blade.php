@@ -28,7 +28,7 @@
               <h3 class="h1 border-top border-bottom border-color-dark py-3 text-center">壁掛けカレンダーご購入<span class="text-red">【無料特典】</span></h3>
               <div class="row align-items-center">
                 <div class="col-12 col-lg-7 my-2">
-                  <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今年、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
+                  <p class="small">ご好評いただいている、挨拶状無料ダウンロードサービス。今回、<span class="text-red font-weight-bold">壁掛けカレンダー（種類問わず）を20部以上ご購入</span>いただいた方に、A4挨拶状（横Ver.）を無料ダウンロードしていただけます。</p>
                   <p class="small">紙面右下のスペースにお名前を入れていただき、私製挨拶状として、ぜひご活用ください。</p>
                   <div class="text-center my-2">
                       <a href="/mypage"><img src="/images/go_mypage.png" alt="マイページへ"></a>

@@ -71,4 +71,3 @@ M&Tec.事業部
 大阪市北区西天満2丁目6-8　堂島ビルヂング6F
 TEL:06-6131-0275 FAX:06-6131-2206
 E-mail: mt@cues-plus.com
-URL:http://www.cues-plus.co.jp

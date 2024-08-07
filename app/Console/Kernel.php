@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\UpdateSyouhinStatus::class,
     ];
 
     /**
@@ -24,8 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
-    }
+        // 毎晩0時に更新コマンドを実行
+        $schedule->command('syouhin:update-status')->dailyAt('00:00');
+         // 10分おきに更新コマンドを実行
+         //$schedule->command('syouhin:update-status')->everyTenMinutes();
+        }
 
     /**
      * Register the commands for the application.
